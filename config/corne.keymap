@@ -24,6 +24,25 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        cut {
+            bindings = <&kp K_CUT>;
+            key-positions = <25 26>;
+        };
+
+        copy {
+            bindings = <&kp K_COPY>;
+            key-positions = <27 26>;
+        };
+
+        paste {
+            bindings = <&kp K_PASTE>;
+            key-positions = <28 27>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -50,10 +69,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                &kp N6    &kp N7    &kp N8  &kp N9     &kp N0             &kp DELETE
-&trans   &trans  &trans  &trans  &trans  &trans                &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp C_VOLUME_UP    &kp C_BRIGHTNESS_INC
-&trans   &trans  &trans  &trans  &trans  &kp LA(LC(DELETE))    &trans    &trans    &trans  &trans     &kp C_VOLUME_DOWN  &kp C_BRIGHTNESS_DEC
-                         &trans  &trans  &trans                &trans    &trans    &trans
+&kp TAB  &kp N1  &kp N2  &kp N3  &kp N4         &kp N5                &kp N6    &kp N7    &kp N8  &kp N9      &kp N0             &kp DELETE
+&trans   &trans  &trans  &trans  &kp BACKSPACE  &trans                &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT   &kp C_VOLUME_UP    &kp C_BRIGHTNESS_INC
+&trans   &trans  &trans  &trans  &kp DELETE     &kp LA(LC(DELETE))    &trans    &trans    &trans  &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_BRIGHTNESS_DEC
+                         &trans  &trans         &trans                &trans    &trans    &trans
             >;
         };
 
