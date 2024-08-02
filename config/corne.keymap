@@ -22,6 +22,18 @@
             require-prior-idle-ms = <125>;
             flavor = "tap-preferred";
         };
+
+        mht: mht {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MHT";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <220>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <125>;
+            flavor = "tap-preferred";
+        };
     };
 
     combos {
@@ -171,10 +183,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E           &kp R           &kp T                   &kp Y                   &kp U           &kp I           &kp O    &kp P     &kp BSPC
-&kp ESC    &kp A  &kp S  &ht LEFT_ALT D  &ht LEFT_GUI F  &kp G                   &kp H                   &ht LEFT_GUI J  &ht LEFT_ALT K  &kp L    &kp SEMI  &kp ENTER
-&kp LCTRL  &kp Z  &kp X  &kp C           &kp V           &kp B                   &kp N                   &kp M           &kp COMMA       &kp DOT  &kp FSLH  &kp SINGLE_QUOTE
-                         &kp LEFT_GUI    &mo 1           &ht LEFT_SHIFT SPACE    &ht LEFT_CONTROL SPACE  &mo 2           &kp LEFT_ALT
+&kp TAB    &kp Q  &kp W  &kp E                &kp R           &kp T                 &kp Y                   &kp U           &kp I                   &kp O    &kp P     &kp BSPC
+&kp ESC    &kp A  &kp S  &ht LEFT_ALT D       &ht LEFT_GUI F  &kp G                 &kp H                   &ht LEFT_GUI J  &ht LEFT_ALT K          &kp L    &kp SEMI  &kp ENTER
+&kp LCTRL  &kp Z  &kp X  &kp C                &kp V           &kp B                 &kp N                   &kp M           &kp COMMA               &kp DOT  &kp FSLH  &kp SINGLE_QUOTE
+                         &ht LEFT_GUI ESCAPE  &mht 1 SPACE    &ht LEFT_SHIFT TAB    &ht LEFT_CONTROL ENTER  &mht 2 SPACE    &ht LEFT_ALT BACKSPACE
             >;
         };
 
