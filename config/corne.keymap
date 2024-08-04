@@ -7,16 +7,12 @@
 #include <dt-bindings/zmk/outputs.h>
 
 // Home row mods macro
-#define HRML(k2,k3,k4) &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1,k2,k3) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3
-#define WHRML(k2,k3,k4) &ht LALT k2  &ht LGUI k3  &ht LCTRL k4
-#define WHRMR(k1,k2,k3) &ht RCTRL k1  &ht RGUI k2  &ht RALT k3
+#define HRML(k2,k3,k4) &ht LALT k2  &ht LGUI k3  &ht LCTRL k4
+#define HRMR(k1,k2,k3) &ht RCTRL k1  &ht RGUI k2  &ht LALT k3
 
-#define MAC 0
-#define WIN 1
-#define RIG 2
-#define LEF 3
-#define TRI 4
+#define RIG 1
+#define LEF 2
+#define TRI 3
 
 / {
     behaviors {
@@ -28,7 +24,138 @@
             tapping-term-ms = <220>;
             quick-tap-ms = <150>;
             global-quick-tap;
+            require-prior-idle-ms = <125>;
             bindings = <&kp>, <&kp>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        cut {
+            bindings = <&kp LC(X)>;
+            require-prior-idle-ms = <125>;
+            key-positions = <25 26>;
+        };
+
+        copy {
+            bindings = <&kp LC(INS)>;
+            require-prior-idle-ms = <125>;
+            key-positions = <27 26>;
+        };
+
+        paste {
+            bindings = <&kp LS(INS)>;
+            require-prior-idle-ms = <125>;
+            key-positions = <28 27>;
+        };
+
+        at {
+            bindings = <&kp AT>;
+            require-prior-idle-ms = <125>;
+            key-positions = <2 1>;
+        };
+
+        hash {
+            bindings = <&kp HASH>;
+            require-prior-idle-ms = <125>;
+            key-positions = <2 3>;
+        };
+
+        dollar {
+            bindings = <&kp DOLLAR>;
+            require-prior-idle-ms = <125>;
+            key-positions = <3 4>;
+        };
+
+        percent {
+            bindings = <&kp PERCENT>;
+            require-prior-idle-ms = <125>;
+            key-positions = <4 5>;
+        };
+
+        cart {
+            bindings = <&kp CARET>;
+            require-prior-idle-ms = <125>;
+            key-positions = <6 7>;
+        };
+
+        and {
+            bindings = <&kp AMPERSAND>;
+            require-prior-idle-ms = <125>;
+            key-positions = <16 17>;
+        };
+
+        star {
+            bindings = <&kp STAR>;
+            require-prior-idle-ms = <125>;
+            key-positions = <28 29>;
+        };
+
+        plus {
+            bindings = <&kp PLUS>;
+            require-prior-idle-ms = <125>;
+            key-positions = <9 10>;
+        };
+
+        underscore {
+            bindings = <&kp UNDER>;
+            require-prior-idle-ms = <125>;
+            key-positions = <18 19>;
+        };
+
+        minus {
+            bindings = <&kp MINUS>;
+            require-prior-idle-ms = <125>;
+            key-positions = <30 31>;
+        };
+
+        left_para {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            require-prior-idle-ms = <125>;
+            key-positions = <19 20>;
+        };
+
+        right_para {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            require-prior-idle-ms = <125>;
+            key-positions = <20 21>;
+        };
+
+        left_brace {
+            bindings = <&kp LEFT_BRACE>;
+            require-prior-idle-ms = <125>;
+            key-positions = <31 32>;
+        };
+
+        right_brace {
+            bindings = <&kp RIGHT_BRACE>;
+            require-prior-idle-ms = <125>;
+            key-positions = <32 33>;
+        };
+
+        left_bracket {
+            bindings = <&kp LEFT_BRACKET>;
+            require-prior-idle-ms = <125>;
+            key-positions = <8 7>;
+        };
+
+        right_bracket {
+            bindings = <&kp RIGHT_BRACKET>;
+            require-prior-idle-ms = <125>;
+            key-positions = <8 9>;
+        };
+
+        pipe {
+            bindings = <&kp PIPE>;
+            require-prior-idle-ms = <125>;
+            key-positions = <21 22>;
+        };
+
+        backslash {
+            bindings = <&kp BACKSLASH>;
+            require-prior-idle-ms = <125>;
+            key-positions = <33 34>;
         };
     };
 
@@ -46,32 +173,15 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-   &trans &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P &trans
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │BACKSPACE │
-   &trans  &kp A     HRML(S,         D,         F)     &kp G          &kp H      HRMR(J,        K,           L)   &kp BSPC &trans
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ENTER    │
-   &trans  &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp ENTER &trans
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                           &trans &lt LEF TAB  &kp LSHIFT    &kp SPACE  &lt RIG TAB &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
-        windows_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
   &trans &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │BACKSPACE │
-  &trans &kp A    WHRML(S,         D,         F)     &kp G          &kp H      WHRMR(J,        K,         L)   &kp BSPC &trans
+  &trans &kp A    HRML(S,         D,         F)     &kp G          &kp H      HRMR(J,        K,         L)   &kp BSPC &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ENTER    │
   &trans &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp ENTER &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                           &trans &lt LEF TAB  &kp LSHIFT    &kp SPACE  &lt RIG TAB &trans
+                                    &trans &lt LEF ESC  &ht LSHIFT SPACE   &ht LCTRL SPACE  &lt RIG TAB &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -114,7 +224,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬───────────┬────────────╮   ╭────────────┬────────────┬──────────┬───────────┬──────────╮
         //│  F1      │  F2      │  F3      │  F4       │ PROFILE 0  │   │ PROFILE 2  │ TOGGLEOUT  │ WINDOWS  │ VOL MUTE  │ NEXTSONG │
-            &trans &kp F1     &kp F2     &kp F3     &kp F4     &bt BT_SEL 0     &bt BT_SEL 2  &out OUT_TOG &tog WIN  &kp C_MUTE  &kp C_NEXT &trans
+            &trans &kp F1     &kp F2     &kp F3     &kp F4     &bt BT_SEL 0     &bt BT_SEL 2  &out OUT_TOG &trans  &kp C_MUTE  &kp C_NEXT &trans
         //├──────────┼──────────┼──────────┼───────────┼────────────┤   ├────────────┼────────────┼──────────┼───────────┼──────────┤
         //│  F5      │  F6      │  F7      │  F8       │ PROFILE 1  │   │ PROFILE 3  │ INC BRIGHT │          │  VOL UP   │PAUSEMUSIC│
             &trans &kp F5     &kp F6     &kp F7     &kp F8     &bt BT_SEL 1     &bt BT_SEL 3  &kp C_BRI_UP  &trans   &kp C_VOL_UP  &kp C_PP &trans
