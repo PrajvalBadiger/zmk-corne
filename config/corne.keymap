@@ -196,7 +196,7 @@
      &trans &kp DEL   &kp CAPS   &kp PSCRN  &kp INS     &trans          &trans    &kp LARW   &kp DARW   &kp UARW   &kp RARW  &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │ HOME     │ PAGE DN  │ PAGE UP  │ END      │
-     &trans &trans    &trans     &trans     &trans      &trans           &trans     &kp HOME   &kp PG_DN  &kp PG_UP  &kp END  &trans
+     &trans &trans    &trans     &trans     &trans      &kp LA(LC(DELETE))          &trans     &kp HOME   &kp PG_DN  &kp PG_UP  &kp END  &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans &trans     &kp ESC        &trans     &trans &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
