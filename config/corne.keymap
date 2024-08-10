@@ -50,66 +50,6 @@
             key-positions = <28 27>;
         };
 
-        at {
-            bindings = <&kp AT>;
-            require-prior-idle-ms = <125>;
-            key-positions = <2 1>;
-        };
-
-        hash {
-            bindings = <&kp HASH>;
-            require-prior-idle-ms = <125>;
-            key-positions = <2 3>;
-        };
-
-        dollar {
-            bindings = <&kp DOLLAR>;
-            require-prior-idle-ms = <125>;
-            key-positions = <3 4>;
-        };
-
-        percent {
-            bindings = <&kp PERCENT>;
-            require-prior-idle-ms = <125>;
-            key-positions = <4 5>;
-        };
-
-        cart {
-            bindings = <&kp CARET>;
-            require-prior-idle-ms = <125>;
-            key-positions = <6 7>;
-        };
-
-        and {
-            bindings = <&kp AMPERSAND>;
-            require-prior-idle-ms = <125>;
-            key-positions = <16 17>;
-        };
-
-        star {
-            bindings = <&kp STAR>;
-            require-prior-idle-ms = <125>;
-            key-positions = <28 29>;
-        };
-
-        plus {
-            bindings = <&kp PLUS>;
-            require-prior-idle-ms = <125>;
-            key-positions = <9 10>;
-        };
-
-        underscore {
-            bindings = <&kp UNDER>;
-            require-prior-idle-ms = <125>;
-            key-positions = <18 19>;
-        };
-
-        minus {
-            bindings = <&kp MINUS>;
-            require-prior-idle-ms = <125>;
-            key-positions = <30 31>;
-        };
-
         left_para {
             bindings = <&kp LEFT_PARENTHESIS>;
             require-prior-idle-ms = <125>;
@@ -146,17 +86,6 @@
             key-positions = <8 9>;
         };
 
-        pipe {
-            bindings = <&kp PIPE>;
-            require-prior-idle-ms = <125>;
-            key-positions = <21 22>;
-        };
-
-        backslash {
-            bindings = <&kp BACKSLASH>;
-            require-prior-idle-ms = <125>;
-            key-positions = <33 34>;
-        };
     };
 
     conditional_layers {
