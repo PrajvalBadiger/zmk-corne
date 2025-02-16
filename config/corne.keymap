@@ -17,7 +17,7 @@
 / {
     behaviors {
         
-        htn: hold_tap {
+        htn: hold_tap_normal {
             label = "hold_tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
