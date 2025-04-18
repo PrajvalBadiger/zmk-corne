@@ -122,7 +122,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ENTER    │
   &trans &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp ENTER  &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                    &kp ESC &lt LEF ESC &htn LSHIFT SPACE   &htn LCTRL SPACE  &lt RIG TAB &kp ENTER
+                                    &kp ESC &mo LEF &htn LSHIFT SPACE   &htn LCTRL SPACE  &lt RIG TAB &kp ENTER
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
